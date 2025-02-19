@@ -22,6 +22,20 @@ mongoose
 const { Message } = require('./models/Message')
 const { User } = require('./models/User')
 
+
+app.get('/info', async (req, res) => {
+  res.json({
+    aboutus: `I'm Isaac. I'm a double major in computer science and German studies
+    at NYU. I spend most of my time playing volleyball, cooking, reading German plays,
+    or coding. Right now I'm reading Gaddis's The Recognitions.
+    Some of my favorite German-language authors are Walter Benjamin,
+    Henrik Ibsen (close enough), and W. G. Sebald, but I read lots of English books
+    too. At the moment I'm working on some coding/web design projects for my job and
+    friends, doing CTFs with NYU's Osiris lab, and learning Arabic.`,
+    imgurl: "http://www.isaac-fisher.com/imgs/self.jpg"
+  })
+})
+
 // a route to handle fetching all messages
 app.get('/messages', async (req, res) => {
   // load all messages from database
