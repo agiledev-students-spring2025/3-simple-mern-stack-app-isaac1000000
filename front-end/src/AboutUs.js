@@ -22,7 +22,7 @@ const AboutUs = props => {
             setInfo(response.data)
             })
             .catch(err => {
-            const errMsg = JSON.stringify(err, null, 2) // convert error object to a string so we can simply dump it to the screen
+            console.error(JSON.stringify(err, null, 2)) // convert error object to a string so we can simply dump it to the screen
             })
     }
 
@@ -30,13 +30,13 @@ const AboutUs = props => {
         // fetch messages this once
         fetchInfo()
         console.log(info)
-    }, [])
+    }, [info])
 
     return (
         <>
             <h1>About Us:</h1>
             {info.aboutus}
-            <img id="self-pic" src={info.imgurl}/>
+            <img alt="me :)" id="self-pic" src={info.imgurl}/>
         </>
     )
 }
